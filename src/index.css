@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* color: white; */
+}
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url(./assets/Poster.jpg) no-repeat;
+  background-size: cover;
+  background-position: top center;
+  /* position: relative; */
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 87%;
+  margin: auto;
+  padding: 10px 0;
+  height: 80px;
+}
+.moviebox {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+}
+.movietext {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+.navinput {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.movieinput {
+  display: flex;
+  width: 525px;
+  padding: 6px 10px;
+  height: 20px;
+  justify-content: space-between;
+  background: none;
+  align-items: center;
+  border-radius: 6px;
+  color: white;
+  border: 2px solid var(--gray-300, #d1d5db);
+}
+.movieinput::placeholder {
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: white;
+  text-align: left;
+}
+.search {
+  position: absolute;
+  right: 8px;
+  color: white;
+}
+.moviemenu {
+  width: 114px;
+  height: 36px;
+  top: 22px;
+  left: 1228px;
+  gap: 27px;
+  display: inline-flex;
+  align-items: center;
+}
+.singIn {
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-decoration: none;
+  color: white;
+}
+.heroAside {
+  /* position: absolute; */
+  width: 324px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  padding-right: 80px;
+  margin: 130px 0 0 100px;
+}
+.John {
+  font-family: DM Sans;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: left;
+  color: white;
+}
+.asiderow2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+}
+.rating {
+  display: flex;
+  gap: 50px;
+}
+.asidetext {
+  color: white;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+}
+.asidebtn{
+  width: 150px;
+  height: 30px;
+  background-color: #BE123C;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.playspan{
+  font-size: 12px;
+  color: white;
+  font-weight: 700;
+}
+.card{
+  width: 230px;
+  height: 400px;
+  /* color: black; */
+}
+.cardImg{
+  height: 320px;
+  width: inherit;
+}
+/* Main components */
+.main{
+  width: 90%;
+  margin: 20px auto;
+}
+.mainTop{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.more{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #BE123C;
+  margin: 30px 0;
+}
+.greater{
+  font-size: 10px;
+}
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
