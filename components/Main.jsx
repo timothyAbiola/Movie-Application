@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Fruit from "../src/assets/fruit.svg";
+import Imdb from "../src/assets/IMDB.svg";
 
 const Main = () => {
   const [movieData, setMovieData] = useState(null);
-
+   const navigate = useNavigate();
   useEffect(() => {
     const fetchMovieData = () => {
       fetch(
@@ -10,7 +13,6 @@ const Main = () => {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setMovieData(data);
         })
         .catch((error) => {
@@ -21,6 +23,11 @@ const Main = () => {
     fetchMovieData();
   }, []);
 
+  const itemClick = (clickedMovie) => {
+    const serializedMoviedata = JSON.stringify(clickedMovie)
+    localStorage.setItem("clickedMovie", serializedMoviedata)
+    navigate("/movies")
+    }
   return (
     <>
       {movieData && (
@@ -34,14 +41,31 @@ const Main = () => {
           </div>
           <div className="cards">
             {movieData.results.slice(0, 10).map((movie) => (
-              <div key={movie.id} className="card" data-testid="movie-card">
+              <div
+                key={movie.id}
+                className="card"
+                data-testid="movie-card"
+                onClick={() => itemClick(movie)}
+              >
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
                   className="cardImg"
+                  data-testid="movie-poster"
                 />
-                <div>
-                  <h4>{movie.title}</h4>
+                <div className="asiderow2">
+                  <h5 data-testid="movie-release-date">{movie.release_date}</h5>
+                  <h4 data-testid="movie-title">{movie.title}</h4>
+                  <div className="mainTop">
+                    <span className="ratingDetails">
+                      <img src={Imdb} alt="Imdb icon" />
+                      <span>{movie.vote_average.toFixed(1)}/10</span>
+                    </span>
+                    <span className="ratingDetails">
+                      <img src={Fruit} alt="Fruit icon" />
+                      <span>97%</span>
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}

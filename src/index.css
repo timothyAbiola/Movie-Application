@@ -119,52 +119,140 @@ header {
   line-height: 18px;
   text-align: left;
 }
-.asidebtn{
+.asidebtn {
   width: 150px;
   height: 30px;
-  background-color: #BE123C;
+  background-color: #be123c;
   border: none;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.playspan{
+.playspan {
   font-size: 12px;
   color: white;
   font-weight: 700;
 }
-.card{
+.card {
   width: 230px;
   height: 400px;
-  /* color: black; */
+  transition: all .3s linear;
+  cursor: pointer;
 }
-.cardImg{
+.card:hover{
+  transform: scale(1.05);
+}
+.cardImg {
   height: 320px;
   width: inherit;
 }
 /* Main components */
-.main{
+.main {
   width: 90%;
   margin: 20px auto;
 }
-.mainTop{
+.mainTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.more{
+.more {
   display: flex;
   gap: 10px;
   align-items: center;
-  color: #BE123C;
+  color: #be123c;
   margin: 30px 0;
 }
-.greater{
+.greater {
   font-size: 10px;
 }
-.cards{
+.cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.ratingDetails {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+  margin:150px auto 50px;
+}
+.social {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.termOfUse {
+  display: flex;
   justify-content: space-between;
+}
+.copyright{
+  display: flex;
+  justify-content: center;
+}
+.right {
+  text-decoration: none;
+  color: rgb(123, 122, 122);
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 700;
+}
+.fa{
+  font-size: 20px;
+}
+
+/* movie page css */
+.movienav{
+  width: 250px;
+  background-color: white;
+  box-shadow:2px 2px 5px #aeaaaa40;
+  height: 100vh;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 30px;
+}
+.navItem{
+    display: flex;
+    gap:30px;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    /* margin-left: 30px; */
+}
+.ni{
+  margin-bottom: 20px;
+}
+.movie{
+  color: rgb(156, 2, 2);
+  font-weight: 900;
+  font-size: 22px;
+}
+.game{
+  width: 100px;
+  line-height: 20px;
+  border: 1px solid rgba(157, 25, 25, 0.811);
+  padding: 20px 25px 20px 10px;
+  border-radius: 15px;
+}
+.start{
+  background-color: rgb(194, 190, 190);
+  padding: 5px;
+  color: rgba(157, 25, 25, 0.811);
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.log{
+  margin-top: 130px;
 }
