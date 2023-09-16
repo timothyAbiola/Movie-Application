@@ -1,9 +1,9 @@
 import React from "react";
 import Tv from "../src/assets/tv.svg";
 import Menu from "../src/assets/Menu.svg";
-import Fruit from "../src/assets/fruit.svg"
-import Imdb from "../src/assets/IMDB.svg"
-import Play from "../src/assets/Play.svg"
+import Fruit from "../src/assets/fruit.svg";
+import Imdb from "../src/assets/IMDB.svg";
+import Play from "../src/assets/Play.svg";
 
 const Hero = () => {
   return (

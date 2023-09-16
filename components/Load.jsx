@@ -1,86 +1,97 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import rectangle from '../src/assets/Rectangle.jpg'
+import List from '../src/assets/List.svg'
 
 const Load = () => {
-  const [clickedMovie, setclickedMovie] = useState(null);
+  const [favMovie, setfavMovie] = useState(null);
+  const [movieYear, setmovieYear] = useState(null)
+  const [Rating, setRating] = useState(null)
 
   useEffect(() => {
-    const serializedMovieData = localStorage.getItem("clikedMovie")
+    const serializedMovieData = localStorage.getItem("clickedMovie");
     if (serializedMovieData) {
       const movieData = JSON.parse(serializedMovieData);
-      setclickedMovie(movieData);
+      const releaseYear = new Date(movieData.release_date).getFullYear();
+      const rate = movieData.vote_count / movieData.vote_average;
+      setRating(rate)
+      setmovieYear(releaseYear)
+      setfavMovie(movieData);
     }
   }, [])
   
   return (
     <>
-      {clickedMovie ? (
-        <div>
+      {favMovie ? (
+        <div className="display">
           <img
-            src={`https://image.tmdb.org/t/p/w500${clickedMovie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${favMovie.poster_path}`}
             alt=""
+            className="displayImg"
           />
-          <div>
-            <div>
-              <div>
-                <div>
-                  <h4>Top Gun: Maverick</h4>
-                  <li>2022</li>
+          <div className="info">
+            <div className="d-left">
+              <div className="titleItem">
+                <div className="title">
+                  <h4 data-testid="movie-title">{favMovie.title}</h4>
+                  <li data-testid="movie-release-date">{movieYear}</li>
                   <li>PG-13</li>
-                  <li>2h 10m</li>
-                  <button>Action</button>
-                  <button>Drama</button>
+                  <li data-testid="movie-runtime">2h 10m</li>
+                  <button className="gens">Action</button>
+                  <button className="gens">Drama</button>
                 </div>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum repudiandae odio excepturi perspiciatis similique
-                  accusantium praesentium laboriosam sapiente, explicabo enim
-                  possimus, fugiat repellendus voluptas vel qui impedit.
-                  Ratione, a possimus?
-                </p>
+                <p data-testid='movie-overview'>{favMovie.overview}</p>
               </div>
-              <div>
+              <div className="crew">
                 <div>
                   <span>Director:</span>
-                  <span>Joseph Kosinski</span>
+                  <span className="name"> Joseph Kosinski</span>
                 </div>
                 <div>
-                  <span>Writers:</span>
-                  <span>Jim Cash, Jack Epps Jr, Peter Craig</span>
+                  <span>Writers: </span>
+                  <span className="name">
+                    Jim Cash, Jack Epps Jr, Peter Craig
+                  </span>
                 </div>
                 <div>
-                  <span>Stars:</span>
-                  <span>Tom Cruise, Jennifer Connelly, Miles Teller</span>
+                  <span>Stars: </span>
+                  <span className="name">
+                    Tom Cruise, Jennifer Connelly, Miles Teller
+                  </span>
                 </div>
-                <div>
-                  <button>Top rated movie #65</button>
-                  <div>Awards 9 nominations</div>
+                <div className="ratedBtn">
+                  <button className="show rated">Top rated movie #65</button>
+                  <select id="mySelect" name="fruit" className="award">
+                    <option value="apple">Awards 9 nominations</option>
+                  </select>
                 </div>
               </div>
             </div>
-            <div>
-              <div>
-                <div>
+            <div className="d-right">
+              <div className="favTop">
+                <div className="favShow">
                   <img src="" alt="" />
-                  <span>8.5</span>
-                  <span>| 350k</span>
+                  <span>{favMovie.vote_average}</span>
+                  <span>| {Rating.toFixed(0)}k</span>
                 </div>
-                <button>
+                <button className="show">
                   <img src="" alt="" />
                   <span>See Showtimes</span>
                 </button>
-                <button>
+                <button className="btnMore">
                   <img src="" alt="" />
                   <span>More watch options</span>
                 </button>
               </div>
-              <div>
+              <div className="arrContain">
                 <div>
-                  <img src="" alt="" />
-                  <img src="" alt="" />
-                  <img src="" alt="" />
+                  <img
+                    src={rectangle}
+                    alt="an array of movies"
+                    className="rec"
+                  />
                 </div>
-                <div>
-                  <img src="" alt="" />
+                <div className="tray">
+                  <img src={List} alt="List Icon" />
                   <span>The Best Movies and Shows in September</span>
                 </div>
               </div>

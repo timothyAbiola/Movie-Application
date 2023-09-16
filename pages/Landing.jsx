@@ -1,16 +1,16 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import Main from '../components/Main'
-import Footer from '../components/Footer'
+import React from "react";
+import Hero from "../components/Hero";
+import Index from "../components/Index";
+import Footer from "../components/Footer";
 
 const Landing = () => {
   return (
-      <>
-          <Hero></Hero>
-          <Main></Main>
-          <Footer/>
+    <>
+      <Hero></Hero>
+      <Index></Index>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;

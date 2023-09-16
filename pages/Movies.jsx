@@ -5,7 +5,7 @@ import Load from '../components/Load';
 const Movies = () => {
   return (
     <>
-      <main>
+      <main className='movieMain'>
               <Navbar />
               <Load/>
       </main>

@@ -5,42 +5,44 @@ import movieProject from "../src/assets/MovieProjector.svg";
 import tvShow from "../src/assets/TvShow.svg";
 import calendar from '../src/assets/Calendar.svg'
 import logout from '../src/assets/Logout.svg'
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
+
   return (
     <>
       <nav className="movienav">
         <div className="navItem ni">
-          <img src={logo} alt="" />
+          <img src={logo} alt="Movie Box" />
           {/* <span>MovieBox</span> */}
         </div>
-        <div>
-          <div className="navItem">
-            <img src={home} alt="" />
+        <div className="bar">
+          <Link to="/" className="navItem">
+            <img src={home} alt=" Home Icon" />
             <span>Home</span>
-          </div>
-          <div className="navItem">
-            <img src={movieProject} alt="" />
-            <span className='movie'>Movies</span>
-          </div>
-          <div className="navItem">
-            <img src={tvShow} alt="" />
+          </Link>
+          <Link to="/movies" className="navItem">
+            <img src={movieProject} alt=" Camera Icon" />
+            <span className="movie">Movies</span>
+          </Link>
+          <Link to="/index" className="navItem">
+            <img src={tvShow} alt=" Tv set Icon" />
             <span>Tv Series</span>
-          </div>
-          <div className="navItem">
-            <img src={calendar} alt="" />
+          </Link>
+          <Link to="/" className="navItem">
+            <img src={calendar} alt=" Calender Icon" />
             <span>Upcoming</span>
-          </div>
-          <div className='game'>
+          </Link>
+          <div className="game">
             <p>Play movie quizes and earn free tickets</p>
             <span>50k people are playing now</span>
-            <button className='start'>Start Playing</button>
+            <button className="start">Start Playing</button>
           </div>
-          <div className="navItem log">
-            <img src={logout} alt="" />
+          <Link to='/' className="navItem log">
+            <img src={logout} alt="Logout Icon" />
             <span>Log out</span>
-          </div>
+          </Link>
         </div>
       </nav>
     </>

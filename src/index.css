@@ -72,7 +72,7 @@ header {
   display: inline-flex;
   align-items: center;
 }
-.singIn {
+.signIn {
   font-family: DM Sans;
   font-size: 16px;
   font-weight: 700;
@@ -137,10 +137,10 @@ header {
 .card {
   width: 230px;
   height: 400px;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   cursor: pointer;
 }
-.card:hover{
+.card:hover {
   transform: scale(1.05);
 }
 .cardImg {
@@ -183,7 +183,7 @@ footer {
   flex-direction: column;
   gap: 20px;
   width: 500px;
-  margin:150px auto 50px;
+  margin: 150px auto 50px;
 }
 .social {
   display: flex;
@@ -194,7 +194,7 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-.copyright{
+.copyright {
   display: flex;
   justify-content: center;
 }
@@ -205,15 +205,16 @@ footer {
   font-size: 14px;
   font-weight: 700;
 }
-.fa{
+.fa {
   font-size: 20px;
 }
 
 /* movie page css */
-.movienav{
+/* Nav Bar */
+.movienav {
   width: 250px;
   background-color: white;
-  box-shadow:2px 2px 5px #aeaaaa40;
+  box-shadow: 2px 2px 5px #aeaaaa40;
   height: 100vh;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -221,38 +222,160 @@ footer {
   flex-direction: column;
   align-items: left;
   margin-left: 30px;
+  overflow: hidden;
+  gap: 30px;
 }
-.navItem{
-    display: flex;
-    gap:30px;
-    align-items: center;
-    margin-top: 60px;
-    margin-bottom: 80px;
-    /* margin-left: 30px; */
+.bar {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
 }
-.ni{
-  margin-bottom: 20px;
+.navItem {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  text-decoration: none;
+  /* margin-top: 60px;
+    margin-bottom: 80px; */
+  /* margin-left: 30px; */
 }
-.movie{
+.ni {
+  margin-top: 20px;
+}
+.movie {
   color: rgb(156, 2, 2);
   font-weight: 900;
   font-size: 22px;
 }
-.game{
+.game {
   width: 100px;
   line-height: 20px;
   border: 1px solid rgba(157, 25, 25, 0.811);
   padding: 20px 25px 20px 10px;
   border-radius: 15px;
 }
-.start{
+.start {
   background-color: rgb(194, 190, 190);
   padding: 5px;
   color: rgba(157, 25, 25, 0.811);
   border: none;
   border-radius: 5px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
-.log{
-  margin-top: 130px;
+.display {
+  width: 100%;
+  background-color: white;
+  height: 100vh;
+  padding: 10px;
+  /* gap: 40px; */
+}
+.movieMain {
+  display: flex;
+  gap: 15px;
+}
+.displayImg {
+  width: 78vw;
+  height: 50vh;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+.info {
+  display: flex;
+}
+.d-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 58vw;
+}
+.titleItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.title {
+  display: flex;
+  gap: 50px;
+}
+.crew{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.name{
+  color: #be123c;
+}
+.d-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.gens {
+  border: 1px solid rgb(203, 200, 200);
+  background-color: white;
+  border-radius: 10px;
+  padding: 2px 12px;
+  font-size: 12px;
+  color: #be123c;
+}
+.favTop {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.favShow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+.show {
+  background-color: #be123c;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+}
+.ratedBtn{
+  display: flex;
+}
+.rated{
+  padding: 8px 15px;
+}
+.award{
+  border: 1px solid rgba(128, 128, 128, 0.414);
+  width: 42vw;
+  border-radius: 5px;
+}
+.btnMore {
+  background-color: #be123d34;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+}
+.rec {
+  width: 280px;
+  height: 150px;
+}
+.arrContain {
+  position: relative;
+  height: 150px;
+}
+.tray {
+  background-color: #12121254;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  border-radius: 10px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+}
+.tray > span {
+  font-size: 13px;
+  color: rgb(237, 236, 236);
+}
+button, Link{
+  cursor: pointer;
 }

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Fruit from "../src/assets/fruit.svg";
 import Imdb from "../src/assets/IMDB.svg";
 
-const Main = () => {
+const Index = () => {
   const [movieData, setMovieData] = useState(null);
    const navigate = useNavigate();
   useEffect(() => {
@@ -76,4 +76,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Index;
